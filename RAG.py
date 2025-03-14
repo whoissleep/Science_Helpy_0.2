@@ -1,7 +1,8 @@
 from database import prepare_RAG_system
 
+from config import PATH_TO_PDFS
+
 def RAG_answer(query):
-    PATH_TO_PDFS = "/home/whoissleep/Документы/VS_CODE/Scince_Helpy_0.2/pdfs"
     vectorestorage = prepare_RAG_system(PATH_TO_PDFS)
     retriever = vectorestorage.as_retriever(
         search_type="similarity",

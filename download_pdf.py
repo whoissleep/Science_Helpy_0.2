@@ -1,13 +1,15 @@
 import os 
 import requests
 
+from config import PATH_TO_PDFS
+
 def download_all_papers(pdf_directory):
     with open(pdf_directory, "r") as f:
         file = [line.strip() for line in f]
 
 
     for i, name_of_pdf in enumerate(file):
-        path = f"/home/whoissleep/Документы/VS_CODE/Scince_Helpy_0.2/pdfs/{i + 1}.pdf"
+        path = f"{PATH_TO_PDFS}/{i + 1}.pdf"
 
         if not os.path.exists(path):
             print(f"[INFO] We don't have this file, downloading...")

@@ -1,12 +1,11 @@
 from langchain_huggingface import HuggingFaceEndpoint
-from dotenv import load_dotenv
 import os
 
-load_dotenv()
+from config import HF_API
 
 model = HuggingFaceEndpoint(
     model="deepseek-ai/DeepSeek-R1-Distill-Qwen-32B",
-    huggingfacehub_api_token=os.getenv("HF_API"),
+    huggingfacehub_api_token=HF_API,
     max_new_tokens=512,
     temperature=0.7,
     top_k=250,
@@ -37,7 +36,7 @@ class Model:
         try:
             model = HuggingFaceEndpoint(
                 model=self.model_id,
-                huggingfacehub_api_token=os.getenv("HF_API"),
+                huggingfacehub_api_token=HF_API,
                 max_new_tokens=self.max_new_tokens,
                 temperature=self.temperature,
                 top_k=self.top_k,
@@ -64,7 +63,7 @@ class Model:
 
         cur_model = HuggingFaceEndpoint(
             model=self.model_id,
-            huggingfacehub_api_token=os.getenv("HF_API"),
+            huggingfacehub_api_token=HF_API,
             **generation_params
         )
         return cur_model.invoke(prompt)

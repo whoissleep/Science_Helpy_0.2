@@ -3,8 +3,10 @@ from RAG import RAG_answer
 from model import Model
 from langchain.prompts import PromptTemplate
 
+from config import PATH_TO_PDFS_URL
+
 def main():
-    PATH_TO_PDFS_URL = "/home/whoissleep/Документы/VS_CODE/Scince_Helpy_0.2/papers.txt"
+    # PATH_TO_PDFS_URL = "/home/whoissleep/Документы/VS_CODE/Scince_Helpy_0.2/papers.txt"
     download_all_papers(PATH_TO_PDFS_URL)
     model = Model()
     query = "Что такое attention?"
