@@ -9,5 +9,7 @@ if os.path.exists(dotenv_path):
     PATH_TO_PDFS = os.getenv('PATH_TO_PDFS')
     MODEL_NAME = os.getenv('MODEL_NAME')
     HF_API = os.getenv('HF_API')
+    AWS_ACCESS_ID_KEY = os.getenv('AWS_ACCESS_ID_KEY')
+    AWS_SECRET_ACCESS_KEY = os.getenv('AWS_SECRET_ACCESS_KEY')
 else:
     Exception('The path to .env file is not exist')
